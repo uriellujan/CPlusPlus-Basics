@@ -4,12 +4,21 @@ using namespace std;
 
 
 class node{
-    int x = 0;
-    node * next;
+    public: int x = 0;
+    public: node * next = nullptr;
 };
+
+void printLinkedList(node head){
+    cout << head.x << endl;
+}
 
 int main(){
 
-    node node1;
+    node spongebob;
+    spongebob.x = 67;
+    node patrick;
+    patrick.x = 24;
+    spongebob.next = &patrick;
+    printLinkedList(spongebob);
     return 0;
 }
