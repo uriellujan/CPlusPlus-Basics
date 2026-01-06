@@ -11,6 +11,13 @@ class node{
     public: node * next = nullptr;
 };
 
+node * createHead(int x){
+    node * newNode = new node;
+    newNode->x = x;
+    newNode->next = nullptr;
+    return newNode;
+}
+
 void insertNode(node * head, int x){
     node * newNode = new node;
     newNode->x = x;
@@ -42,9 +49,12 @@ void printLinkedList(node * head){
 }
 
 int main(){
-    node * head = new node;
-    insertNode(head, 1);
+    // node * head = new node;
+    // head->x = 21;
+    node * head = createHead(21);
+    insertNode(head, 24);
     printLinkedList(head);
-    deleteNode(head);
+    deleteNode(head); // simply popping the last node from the tail
+    delete(head); // actually deleting the head;
     return 0;
 }
