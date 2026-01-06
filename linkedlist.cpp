@@ -11,13 +11,27 @@ class node{
     public: node * next = nullptr;
 };
 
-void insertNode(node * head){
+void insertNode(node * head, int x){
     node * newNode = new node;
-    head->next = newNode;
+    newNode->x = x;
+    newNode->next = nullptr;
+    node * current = head;
+    while (current->next != nullptr){
+        current = current->next;
+    }
+    current->next = newNode;
 }
 
 void deleteNode(node * head){
-    delete head;
+    if (head == nullptr) return;
+    else{
+        node * current = head;
+        while(current->next->next != nullptr){
+            current = current->next;
+        }
+        delete(current->next);
+        current->next = nullptr;
+    }
 }
 
 void printLinkedList(node * head){
@@ -28,14 +42,9 @@ void printLinkedList(node * head){
 }
 
 int main(){
-    node * spongebob = new node;
-    spongebob->x = 67;
-    node * patrick = new node;
-    patrick->x = 24;
-    spongebob->next = patrick;
-    patrick->next = nullptr;
-    printLinkedList(spongebob);
-    delete(spongebob);
-    delete(patrick);
+    node * head = new node;
+    insertNode(head, 1);
+    printLinkedList(head);
+    deleteNode(head);
     return 0;
 }
