@@ -49,8 +49,6 @@ void printLinkedList(node * head){
 }
 
 int main(){
-    // node * head = new node;
-    // head->x = 21;
     node * head = createHead(21);
     insertNode(head, 24);
     printLinkedList(head);
