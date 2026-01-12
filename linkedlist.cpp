@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 class node{
     public: int x = 0;
     public: node * next = nullptr;
@@ -96,10 +95,12 @@ int main(){
                 cout << endl;
                 insertNode(head, x);
                 cout << "Node added successfully" << endl << endl;
+                printLinkedList(head);
                 break;
             case 2:
                 deleteNode(head);
                 cout << "Node deleted successfully" << endl << endl;
+                printLinkedList(head);
                 break;
             case 3:
                 exitListApp(head);
@@ -109,7 +110,6 @@ int main(){
                 cout << "Invalid Number. Please select a number from the Menu..." << endl;
                 break;
         }
-        printLinkedList(head); // causing segfault because case 3 deletes the whole list which means I'm passing a 'head' with nothing
     }
     return 0;
 }
