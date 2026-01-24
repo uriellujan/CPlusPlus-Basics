@@ -1,6 +1,6 @@
 // This is a program to practice and demonstrate knowledge over the linked
 // list data structure in the C++ programming language
- 
+
 #include <iostream>
 
 using namespace std;
