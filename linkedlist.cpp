@@ -1,6 +1,6 @@
 // This is a program to practice and demonstrate knowledge over the linked
 // list data structure in the C++ programming language
-
+ 
 #include <iostream>
 
 using namespace std;
@@ -72,7 +72,7 @@ void exitListApp(node * head){
 
 // I'm thinking for the app now that I've got the bulk of the linked list logic
 // finished I should work on both refining the functions above as well as focusing
-// on making the CLI a little user friendly and intuitive. I will be adding a print
+// on making the CLI a little more user friendly and intuitive. I will be adding a print
 // list option but I could always just print it every loop so the user automatically
 // sees their current list
 int main(){
@@ -108,6 +108,7 @@ int main(){
                 break;
             default:
                 cout << "Invalid Number. Please select a number from the Menu..." << endl;
+                printLinkedList(head);
                 break;
         }
     }
